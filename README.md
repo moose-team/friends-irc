@@ -5,7 +5,8 @@ Connects Slack and Friends channels by sending messages back and forth.
 Based on [slack-irc](https://github.com/ekmartin/slack-irc).
 
 ## Installation and usage
-Use newest io.js and npm (`>= 1.8.1`, `>= 2.8.3`).
+Use the newest version of io.js and npm (`>= 1.8.1`, `>= 2.8.3`) and follow the [prerequisite steps](https://github.com/js-platform/node-webrtc#prerequisites)
+for [node-webrtc](https://github.com/js-platform/node-webrtc) before continuing.
 
 Install either through npm:
 ```bash
