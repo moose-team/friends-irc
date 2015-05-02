@@ -1,0 +1,9 @@
+[
+  {
+    "server": "irc.bottest.org",
+    "token": "hei",
+    "channelMapping": {
+      "swarm": "#irc"
+    }
+  }
+]

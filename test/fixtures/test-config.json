@@ -1,0 +1,18 @@
+[
+  {
+    "nickname": "test",
+    "server": "irc.bottest.org",
+    "token": "testtoken",
+    "channelMapping": {
+      "swarm": "#irc"
+    }
+  },
+  {
+    "nickname": "test2",
+    "server": "irc.bottest.org",
+    "token": "testtoken",
+    "channelMapping": {
+      "swarm": "#irc"
+    }
+  }
+]
