@@ -11,14 +11,14 @@ for [node-webrtc](https://github.com/js-platform/node-webrtc) before continuing.
 Install either through npm:
 ```bash
 $ npm install -g friends-irc
-$ friends-irc --config path/to/config.json
+$ friends-irc --config /path/to/config.json
 ```
 
 or by cloning the repository:
 ```bash
 In the repository folder:
 $ npm install
-$ npm start
+$ node index.js --config /path/to/config.json
 ```
 
 ## Configuration
