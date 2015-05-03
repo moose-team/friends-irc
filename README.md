@@ -1,5 +1,6 @@
 # friends-irc
-[![Build Status](https://travis-ci.org/ekmartin/friends-irc.svg)](https://travis-ci.org/ekmartin/friends-irc)
+
+[![Build Status](https://travis-ci.org/moose-team/friends-irc.svg)](https://travis-ci.org/moose-team/friends-irc)
 
 Connects Slack and Friends channels by sending messages back and forth.
 Based on [slack-irc](https://github.com/ekmartin/slack-irc).
