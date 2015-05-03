@@ -1,8 +1,14 @@
 # friends-irc
 
-[![Build Status](https://travis-ci.org/moose-team/friends-irc.svg)](https://travis-ci.org/moose-team/friends-irc)
+[![npm][npm-image]][npm-url]
+[![travis][travis-image]][travis-url]
 
-Connects Slack and Friends channels by sending messages back and forth.
+[npm-image]: https://img.shields.io/npm/v/friends-irc.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/friends-irc
+[travis-image]: https://img.shields.io/travis/moose-team/friends-irc.svg?style=flat-square
+[travis-url]: https://travis-ci.org/moose-team/friends-irc
+
+Connects IRC and Friends channels by sending messages back and forth.
 Based on [slack-irc](https://github.com/ekmartin/slack-irc).
 
 ## Installation and usage
