@@ -1,21 +1,23 @@
 {
   "name": "friends-irc",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "author": "MOOSE Team",
   "description": "Connects IRC and Friends channels by sending messages back and forth.",
   "keywords": [
     "friends",
     "irc",
     "gateway",
     "bot",
-    "friends-irc"
+    "friends-irc",
+    "moose"
   ],
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:ekmartin/friends-irc.git"
+    "url": "git@github.com:moose-team/friends-irc.git"
   },
   "bugs": {
-    "url": "https://github.com/ekmartin/friends-irc/issues"
+    "url": "https://github.com/moose-team/friends-irc/issues"
   },
   "scripts": {
     "start": "node index.js",
@@ -23,9 +25,6 @@
   },
   "bin": {
     "friends-irc": "./index.js"
-  },
-  "author": {
-    "name": "Martin Ek <mail@ekmartin.com>"
   },
   "license": "MIT",
   "dependencies": {
