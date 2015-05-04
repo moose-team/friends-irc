@@ -2,7 +2,7 @@
   "name": "friends-irc",
   "version": "1.0.2",
   "author": "MOOSE Team",
-  "description": "Connects IRC and Friends channels by sending messages back and forth.",
+  "description": "A bridge between IRC and Friends channels.",
   "keywords": [
     "friends",
     "irc",
