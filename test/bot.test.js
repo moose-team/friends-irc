@@ -40,8 +40,24 @@ describe('Bot', function () {
     this.bot.sendToSwarm(message.username, '#irc', message.text)
     var calledMessage = this.bot.swarm.send.getCall(0).args[0]
     calledMessage.text.should.equal(message.text)
-    calledMessage.username.should.equal('Anonymous ' + message.username)
+    calledMessage.username.should.equal('Anonymous ' + message.username + ' (IRC)')
     calledMessage.channel.should.equal('swarm')
+  })
+
+  it('should format usernames before sending to swarm', function () {
+    var message = {
+      text: 'testmessage',
+      username: 'testuser'
+    }
+
+    var oldFormat = this.bot.swarmUsernameFormat
+    this.bot.swarmUsernameFormat = 'Crazy $username'
+
+    this.bot.sendToSwarm(message.username, '#irc', message.text)
+    var calledMessage = this.bot.swarm.send.getCall(0).args[0]
+    calledMessage.username.should.equal('Crazy ' + message.username)
+
+    this.bot.swarmUsernameFormat = oldFormat
   })
 
   it('should not send messages to swarm if the channel isn\'t in the channel mapping',
@@ -61,6 +77,24 @@ describe('Bot', function () {
     this.bot.sendToIRC(message)
     var ircText = '<testuser> ' + text
     ClientStub.prototype.say.should.have.been.calledWith('#irc', ircText)
+  })
+
+  it('should format usernames before sending to irc', function () {
+    var oldFormat = this.bot.swarmUsernameFormat
+    this.bot.ircUsernameFormat = 'Cat $username'
+
+    var text = 'testmessage'
+    var message = {
+      channel: 'swarm',
+      username: 'testuser',
+      text: text
+    }
+    this.bot.lastSent = false
+    this.bot.sendToIRC(message)
+    var ircText = 'Cat testuser ' + text
+    ClientStub.prototype.say.should.have.been.calledWith('#irc', ircText)
+
+    this.bot.ircUsernameFormat = oldFormat
   })
 
   it('should not send messages to irc if the channel isn\'t in the channel mapping',
