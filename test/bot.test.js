@@ -79,6 +79,24 @@ describe('Bot', function () {
     ClientStub.prototype.say.should.have.been.calledWith('#irc', ircText)
   })
 
+  it('should format usernames before sending to irc', function () {
+    var oldFormat = this.bot.swarmUsernameFormat
+    this.bot.ircUsernameFormat = 'Cat $username'
+
+    var text = 'testmessage'
+    var message = {
+      channel: 'swarm',
+      username: 'testuser',
+      text: text
+    }
+    this.bot.lastSent = false
+    this.bot.sendToIRC(message)
+    var ircText = 'Cat testuser ' + text
+    ClientStub.prototype.say.should.have.been.calledWith('#irc', ircText)
+
+    this.bot.ircUsernameFormat = oldFormat
+  })
+
   it('should not send messages to irc if the channel isn\'t in the channel mapping',
   function () {
     this.bot.swarm.returnWrongStubInfo = true
