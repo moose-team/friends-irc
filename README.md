@@ -54,6 +54,7 @@ as long as they're present in the channel mapping.
   {
     "nickname": "test",
     "server": "irc.bottest.org",
+    "swarmUsernameFormat": "Anonymous Cat $username", // $username is replaced with the IRC user's username before posting to Friends 
     "autoSendCommands": [ // Commands that will be sent on connect
       ["PRIVMSG", "NickServ", "IDENTIFY password"],
       ["MODE", "test", "+x"],

@@ -40,8 +40,24 @@ describe('Bot', function () {
     this.bot.sendToSwarm(message.username, '#irc', message.text)
     var calledMessage = this.bot.swarm.send.getCall(0).args[0]
     calledMessage.text.should.equal(message.text)
-    calledMessage.username.should.equal('Anonymous ' + message.username)
+    calledMessage.username.should.equal('Anonymous ' + message.username + ' (IRC)')
     calledMessage.channel.should.equal('swarm')
+  })
+
+  it('should format usernames before sending to swarm', function () {
+    var message = {
+      text: 'testmessage',
+      username: 'testuser'
+    }
+
+    var oldFormat = this.bot.swarmUsernameFormat
+    this.bot.swarmUsernameFormat = 'Crazy $username'
+
+    this.bot.sendToSwarm(message.username, '#irc', message.text)
+    var calledMessage = this.bot.swarm.send.getCall(0).args[0]
+    calledMessage.username.should.equal('Crazy ' + message.username)
+
+    this.bot.swarmUsernameFormat = oldFormat
   })
 
   it('should not send messages to swarm if the channel isn\'t in the channel mapping',
